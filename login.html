@@ -7,6 +7,34 @@
 </head>
 
 <body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAf8yvEANFplWCuLNmfx6BCMPI48KEK76s",
+    authDomain: "techwork-healthc-1588976071067.firebaseapp.com",
+    databaseURL: "https://techwork-healthc-1588976071067.firebaseio.com",
+    projectId: "techwork-healthc-1588976071067",
+    storageBucket: "techwork-healthc-1588976071067.appspot.com",
+    messagingSenderId: "856451668957",
+    appId: "1:856451668957:web:ca3843635efcf5836b3434"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  function writeData(){
+    firebase.database().ref("User").set({
+      email = document.getElementById("emailField").value,
+      password = document.getElementById("passwordField").value
+    });
+  }
+</script>
+
   <a href="./calendar.html">Calendar</a>
   <a href="./notifications.html">Notifications</a>
   <a href="./BMICalc.html">BMI Calculator</a>
@@ -17,17 +45,18 @@
   <div id="logo">
   <h1> Login  <h/1>
   </div>
-</body>
+
 
   <form class="box" action="index.html" method="post">
     <h1>Login to your HealthConnect account</h1>
-    <input type="text" name="" placeholder="Enter your email">
+    <input type="text" name="" placeholder="Enter your email" id = "emailField">
     <br>
     <br>
-    <input type="password" name="" placeholder="Enter your password">
+    <input type="password" name="" placeholder="Enter your password" id = "passwordField">
     <br>
     <br>
-    <input type="submit" name="" value="Login">
+    <button onclick="writeData()" type="submit" name="" value="Login"></button>
   </form>
+</body>
 
 </html>
