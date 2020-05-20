@@ -31,7 +31,7 @@
       font-family: Arial ;
     }
 
-    .hotel-search {
+    .doctor-search {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
@@ -64,7 +64,7 @@
       overflow-x: hidden;
     }
 
-    #findhotels {
+    #finddoctor {
       font-size: 14px;
     }
 
@@ -95,7 +95,7 @@
       margin: 4px;
     }
 
-    .hotelIcon {
+    .doctorIcon {
       width: 24px;
       height: 24px;
     }
@@ -139,7 +139,7 @@
 <h1> Search <h/1>
 </div>
 
-  <div class="hotel-search">
+  <div class="doctor-search">
 
     <div id="locationField">
       <input id="autocomplete" placeholder="Enter a city" type="text" />
@@ -345,7 +345,7 @@
 
    
     function buildIWContent(place) {
-      document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
+      document.getElementById('iw-icon').innerHTML = '<img class="doctorIcon" ' +
         'src="' + place.icon + '"/>';
       document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url +
         '">' + place.name + '</a></b>';
