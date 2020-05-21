@@ -14,7 +14,7 @@
       height: 100%;
     }
 
- 
+
     html,
     body {
       height: 100%;
@@ -127,17 +127,24 @@
 
 <body>
 
-  <a href="./calendar.html">Calendar</a>
-<a href="./notifications.html">Notifications</a>
-<a href="./BMICalc.html">BMI Calculator</a>
-<a href="./search.html">Search</a>
-<a href="./help.html">Help</a>
-<a href="./signup.html">Sign Up</a>
-<a href="./login.html">Login</a>
+  <nav role="navigation" aria-label="main menu">
+    <ul class="navbar">
+      <li><a href="./calendar.html">Calendar</a></li>
+      <li><a  href="./notifications.html">Notifications</a></li>
+      <li><a  href="./BMICalc.html">BMI Calculator</a></li>
+      <li><a  href="./search.html">Search</a></li>
+      <li><a  href="./help.html">Help</a></li>
+      <li><a  href="./account.html">Account</a></li>
+    </ul>
+  </nav>
 
-<div id="logo">
-<h1> Search <h/1>
-</div>
+
+  <a href="#" class="brand-logo">
+    <div id="logo">
+     <h1> Search <h/1>
+     <img src="img/logo.svg" style="width: 180px; margin-top: 10px;">
+    </div>
+  </a>
 
   <div class="doctor-search">
 
@@ -184,7 +191,7 @@
   </div>
 
   <script>
- 
+
 
     var map, places, infoWindow;
     var markers = [];
@@ -220,9 +227,9 @@
         content: document.getElementById('info-content')
       });
 
-     
+
       autocomplete = new google.maps.places.Autocomplete(
-  
+
         (
           document.getElementById('autocomplete')), {
           types: ['(cities)'],
@@ -232,7 +239,7 @@
 
       autocomplete.addListener('place_changed', onPlaceChanged);
 
-    
+
       document.getElementById('country').addEventListener(
         'change', setAutocompleteCountry);
     }
@@ -249,7 +256,7 @@
       }
     }
 
-   
+
     function search() {
       var search = {
         bounds: map.getBounds(),
@@ -260,17 +267,17 @@
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           clearResults();
           clearMarkers();
-          
+
           for (var i = 0; i < results.length; i++) {
             var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
             var markerIcon = MARKER_PATH + markerLetter + '.png';
-            
+
             markers[i] = new google.maps.Marker({
               position: results[i].geometry.location,
               animation: google.maps.Animation.DROP,
               icon: markerIcon
             });
-            
+
             markers[i].placeResult = results[i];
             google.maps.event.addListener(markers[i], 'click', showInfoWindow);
             setTimeout(dropMarker(i), i * 100);
@@ -328,7 +335,7 @@
       }
     }
 
-   
+
     function showInfoWindow() {
       var marker = this;
       places.getDetails({
@@ -343,7 +350,7 @@
         });
     }
 
-   
+
     function buildIWContent(place) {
       document.getElementById('iw-icon').innerHTML = '<img class="doctorIcon" ' +
         'src="' + place.icon + '"/>';
@@ -359,7 +366,7 @@
         document.getElementById('iw-phone-row').style.display = 'none';
       }
 
-      
+
       if (place.rating) {
         var ratingHtml = '';
         for (var i = 0; i < 5; i++) {
@@ -375,7 +382,7 @@
         document.getElementById('iw-rating-row').style.display = 'none';
       }
 
-      
+
       if (place.website) {
         var fullUrl = place.website;
         var website = hostnameRegexp.exec(place.website);
