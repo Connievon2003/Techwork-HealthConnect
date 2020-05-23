@@ -12,18 +12,18 @@
         var heightunits = document.getElementById("heightunits").value;
         var weight = Number(document.getElementById("weight").value);
         var weightunits = document.getElementById("weightunits").value;
-		
+
 		if (heightunits == "inches") height /= 39.3700787;
         if (weightunits == "lb") weight /= 2.20462;
-		
+
 		// Perform calculation
-		
+
 		var BMI = Math.round(weight / Math.pow(height, 2) * 10000);
-        
+
         //Display result of calculation
-		
+
         document.getElementById("output").innerText = Math.round(BMI * 100) / 100;
-        
+
         var output = Math.round(BMI * 100) / 100
         if (output < 18.5)
           document.getElementById("comment").innerText = "Underweight";
@@ -37,18 +37,25 @@
 	</script>
 
 <body>
-  <a href="./calendar.html">Calendar</a>
-  <a href="./notifications.html">Notifications</a>
-  <a href="./BMICalc.html">BMI Calculator</a>
-  <a href="./search.html">Search</a>
-  <a href="./help.html">Help</a>
-  <a href="./signup.html">Sign Up</a>
-  <a href="./login.html">Login</a>
+  <navbar role="navigation" aria-label="main menu">
+       <ul iclass="navbar">
+         <span>
+             <a href="./calendar.html">Calendar</a>
+             <a href="./notifications.html">Notifications</a>
+             <a href="./BMICalc.html">BMI Calculator</a>
+             <a href="./search.html">Search</a>
+             <a href="./help.html">Help</a>
+             <a href="./Account.html">Account</a>
+             <a href="./signup.html">Sign Up</a>
+             <a href="./Authentication.html">Login</a>
+        </span>
+      </ul>
+  </navbar>
 
   <div id="logo">
   <h1> BMI Calculator </h1>
   </div>
-  
+
   <div id="content">
 	<input type="submit" name="" value="Male"><input type="submit" name="" value="Female">
 	<br>
@@ -67,7 +74,7 @@
     </p>
 	<input type="submit" value="Calculate" onclick="calculate();">
 	<h1> Your BMI is: <span id="output"></span></h1>
-	
+
 	<h2>This means you are: <span id="comment"></span> </h2>
   </div>
 </body>
