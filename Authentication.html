@@ -13,28 +13,17 @@
   </head>
 
 <body>
-  <nav role="navigation" aria-label="main menu">
+  <navbar role="navigation" aria-label="main menu">
        <ul iclass="navbar">
          <span>
-         <a href="./calendar.html">Calendar</a>
-         <a href="./BMICalc.html">BMI Calculator</a>
-         <a href="./search.html">Search</a>
-         <a href="./help.html">Help</a>
-           <li class="logged-in">
-             <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
-           </li>
-           <li class="logged-in">
-             <a href="#" class="grey-text" id="logout">Logout</a>
-           </li>
-           <li class="logged-out">
-             <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
-           </li>
-           <li class="logged-out">
-             <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
-           </li>
-         </span>
-       </ul>
-   </nav>
+             <a href="./calendar.html">Calendar</a>
+             <a href="./BMICalc.html">BMI Calculator</a>
+             <a href="./search.html">Search</a>
+             <a href="./help.html">Help</a>
+             <a href="./Account.html">Account</a>
+        </span>
+      </ul>
+  </navbar>
 
    <a href="#" class="brand-logo">
      <div id="Union_3">
@@ -42,6 +31,7 @@
          <img src="logo.svg" style="width: 70px; margin-top: 20px; margin-left: 50px;">
        </div>
    </a>
+
    <!-- SIGN UP MODAL Modify to ask for user input (age, name, etc)-->
    <div id="modal-signup" class="modal">
      <div class="modal-content">
@@ -75,14 +65,6 @@
          </div>
          <button class="btn yellow darken-2 z-depth-0">Login</button>
        </form>
-     </div>
-   </div>
-
-   <!-- ACCOUNT MODAL -->
-   <div id="modal-account" class="modal">
-     <div class="modal-content center-align">
-       <h4>Account details</h4><br />
-       <div class="account-details"></div>
      </div>
    </div>
 
