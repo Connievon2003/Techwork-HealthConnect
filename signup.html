@@ -2,43 +2,62 @@
 <html>
 
 <head>
-  <title>Login Form</title>
+  <title>Sign Up Form</title>
   <link rel="stylesheet" href="style.css"
 </head>
 
 <body>
-  <a href="./calendar.html">Calendar</a>
-  <a href="./notifications.html">Notifications</a>
-  <a href="./BMICalc.html">BMI Calculator</a>
-  <a href="./search.html">Search</a>
-  <a href="./help.html">Help</a>
-  <a href="./signup.html">Sign Up</a>
-  <a href="./login.html">Login</a>
+  <nav role="navigation" aria-label="main menu">
+    <ul class="navbar">
+      <button aria-label="calendar" href="./calendar.html">Calendar </button>
+      <button aria-label="notifications"href="./notifications.html">Notifications</button>
+      <button aria-label="BMI calculator"href="./BMICalc.html">BMI Calculator</button>
+      <button aria-label="Search" href="./search.html">Search</button>
+      <button aria-label="help" href="./help.html">Help</button>
+      <button aria-label="sign up" href="./signup.html">Sign Up</button>
+      <button aria-label="log in" href="./login.html">Login</button>
+    </ul>
+  </nav>
 
-  <div id="logo">
-    <h1>Account Registration</h1>
-  </div>
+  <header role="banner" id="logo" aria-label="Heath Connect">
+      <h1> HEALTHCONNECT </h1>
+        <img src="Union 3.svg" width="300" height="300" alt="white cross">
+  </header>
+
+
+  <main>
+    <form id= "sing_up" action="sucess.html" method="get"><!-- this needs to be replaced with backend-->
+      <label>Enter your first name:</label>
+      <input type="text" name="firstname:" required placeholder="First name">
+      <br>
+      <br>
+      <label>Enter your last name:</label>
+      <input type="lastname" name="lastname:" required placeholder="Last name">
+      <br>
+      <br>
+      <label>Enter your date of birth:</label>
+      <input type="dob" name="dob:" placeholder="DD/MM/YYYY">
+      <br>
+      <br>
+      <label>Select your gender:</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="prefernottosay">Prefer not to say</option>
+      </select>
+      <br>
+      <br>
+      <label>Enter an email address</label>
+      <input type="email" name="email" required placeholder="email@example.com">
+      <br>
+      <br>
+      <label>Enter a password</label>
+      <input type="number" name="password" minlength="8" required placeholder="XXXXXXXX">
+      <br>
+      <br>
+      <button type="submit">Login</button>
+    </form>
+  </main>
 
 </body>
-
-  <form>
-    <input type="text" name="firstname:" placeholder="Enter your first name">
-    <br>
-    <br>
-    <input type="lastname" name="lastname:" placeholder="Enter your last name">
-    <br>
-    <br>
-    <input type="dob" name="dob:" placeholder="Enter your date of birth">
-    <br>
-    <br>
-    <label for="gender">Select your gender:</label>
-
-  <select id="gender" name="gender">
-    <option value="male">Male</option>
-    <option value="female">Female</option>
-    <option value="prefernottosay">Prefer not to say</option>
-  </select>
-
-  </form>
-
 </html>

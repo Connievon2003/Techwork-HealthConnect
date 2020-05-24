@@ -6,70 +6,41 @@
   <link rel="stylesheet" href="style.css"
 </head>
 
-	<script type="text/javascript">
-		function calculate() {
-		var height = Number(document.getElementById("height").value);
-        var heightunits = document.getElementById("heightunits").value;
-        var weight = Number(document.getElementById("weight").value);
-        var weightunits = document.getElementById("weightunits").value;
-		
-		if (heightunits == "inches") height /= 39.3700787;
-        if (weightunits == "lb") weight /= 2.20462;
-		
-		// Perform calculation
-		
-		var BMI = Math.round(weight / Math.pow(height, 2) * 10000);
-        
-        //Display result of calculation
-		
-        document.getElementById("output").innerText = Math.round(BMI * 100) / 100;
-        
-        var output = Math.round(BMI * 100) / 100
-        if (output < 18.5)
-          document.getElementById("comment").innerText = "Underweight";
-        else if (output >= 18.5 && output <= 25)
-          document.getElementById("comment").innerText = "Normal";
-        else if (output >= 25 && output <= 30)
-          document.getElementById("comment").innerText = "Obese";
-        else if (output > 30)
-          document.getElementById("comment").innerText = "Overweight";
-		}
-	</script>
-
 <body>
-  <a href="./calendar.html">Calendar</a>
-  <a href="./notifications.html">Notifications</a>
-  <a href="./BMICalc.html">BMI Calculator</a>
-  <a href="./search.html">Search</a>
-  <a href="./help.html">Help</a>
-  <a href="./signup.html">Sign Up</a>
-  <a href="./login.html">Login</a>
+  <nav role="navigation" aria-label="main menu">
+    <ul class="navbar">
+      <button aria-label="calendar" href="./calendar.html">Calendar </button>
+      <button aria-label="notifications"href="./notifications.html">Notifications</button>
+      <button aria-label="BMI calculator"href="./BMICalc.html">BMI Calculator</button>
+      <button aria-label="Search" href="./search.html">Search</button>
+      <button aria-label="help" href="./help.html">Help</button>
+      <button aria-label="sign up" href="./signup.html">Sign Up</button>
+      <button aria-label="log in" href="./login.html">Login</button>
+    </ul>
+  </nav>
 
-  <div id="logo">
-  <h1> BMI Calculator </h1>
-  </div>
-  
-  <div id="content">
-	<input type="submit" name="" value="Male"><input type="submit" name="" value="Female">
-	<br>
-	<br>
-	<p>Height: <input type="text" id="height"/>
-		<select type="multiple" id="heightunits">
-            <option value="metres" selected="selected">centimetres</option>
-            <option value="inches">inches</option>
-        </select>
-	</p>
-	<p>Weight: <input type="text" id="weight"/>
-        <select type="multiple" id="weightunits">
-            <option value="kg" selected="selected">kilograms</option>
-            <option value="lb">pounds</option>
-        </select>
-    </p>
-	<input type="submit" value="Calculate" onclick="calculate();">
-	<h1> Your BMI is: <span id="output"></span></h1>
-	
-	<h2>This means you are: <span id="comment"></span> </h2>
-  </div>
+  <header role="banner" id="logo" aria-label="Heath Connect">
+      <h1> HEALTHCONNECT </h1>
+        <img src="Union 3.svg" width="300" height="300" alt="white cross">
+  </header>
+
+  <main>
+    <form id="content" action="sucess.html" method="get"><!-- this needs to be replaced with backend-->
+      <button type="submit">Male</button><button type="submit">Female</button>
+        <br>
+        <br>
+        <label>Height</label>
+        <input name="Height" placeholder="0.00" type="number">cm
+        <br>
+        <br>
+        <label>Weight</label>
+        <input name="Weight" placeholder="00" type="number">kg
+        <br>
+        <br>
+        <button type="submit">Calculate</button>
+    </form>
+  </main>
 </body>
 
+</body>
 </html>
