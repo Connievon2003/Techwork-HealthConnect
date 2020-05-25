@@ -2,23 +2,27 @@
 auth.onAuthStateChanged(user => {
   if (user) {
     console.log('user logged in: ', user);
+    db.collection('guides').get().then(snapshot => {
+      setupGuides(snapshot.docs);
+    });
   } else {
     console.log('user logged out');
+    setupGuides([]);
   }
-});
+})
 
-//signup
+// signup
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
-  e.preventDeFault();
+  e.preventDefault();
 
-  //get user info
+  // get user info
   const email = signupForm['signup-email'].value;
   const password = signupForm['signup-password'].value;
 
-// sign up the user in the firebase databaseURL
+  // sign up the user
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    console.log(cred.user)
+    // close the signup modal & reset form
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();
     signupForm.reset();
@@ -29,7 +33,7 @@ signupForm.addEventListener('submit', (e) => {
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
   e.preventDefault();
-  auth.signOut()
+  auth.signOut();
 });
 
 // login
