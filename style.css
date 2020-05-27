@@ -1,20 +1,61 @@
 body{
-    background: #D2CCCC;
+    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: 		#A9A9A9;
 }
 
-.box{
-    width: 300px;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #B775A5;
-    text-align: center;
-}
-
-.box input[type = "text"],.box input[type = "password"]{
-
-
+.container{
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
 
 }
+
+header ul{
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  background: #000000;
+  color: #ffffff;
+  padding-top: 30px;
+  min-height: 70px;
+}
+
+
+header a{
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header li{
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+header #brand{
+  float: left;
+}
+
+.logo{
+  width: 30px;
+  position: relative;
+  left: 280px;
+  bottom: 38px;
+}
+
+header #brand h1{
+  margin: 0;
+}
+
+header navbar {
+  float: right;
+  margin-top: 10px;
+}
+
