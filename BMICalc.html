@@ -5,7 +5,26 @@
   <title>BMI Calculator</title>
   <link rel="stylesheet" href="style.css"
 </head>
-
+	<style>
+		input[type=text]{
+			padding: 3px;
+			border: 2px solid black;
+			border-radius: 5px;
+			length: ;
+		}
+		
+		input{
+			border-radius: 6px;
+			border: 2px solid black;
+		}
+		
+		#content{
+			width: 25%;
+			margin: auto;
+		}
+	
+	</style>
+	
 	<script type="text/javascript">
 		function calculate() {
 		var height = Number(document.getElementById("height").value);
@@ -13,10 +32,10 @@
         var weight = Number(document.getElementById("weight").value);
         var weightunits = document.getElementById("weightunits").value;
 		
+		//Convert units to metric
+		
 		if (heightunits == "inches") height /= 39.3700787;
         if (weightunits == "lb") weight /= 2.20462;
-		
-		// Perform calculation
 		
 		var BMI = Math.round(weight / Math.pow(height, 2) * 10000);
         
@@ -37,19 +56,43 @@
 	</script>
 
 <body>
-  <a href="./calendar.html">Calendar</a>
-  <a href="./notifications.html">Notifications</a>
-  <a href="./BMICalc.html">BMI Calculator</a>
-  <a href="./search.html">Search</a>
-  <a href="./help.html">Help</a>
-  <a href="./signup.html">Sign Up</a>
-  <a href="./login.html">Login</a>
+  <header>
+    <div class="container">
+      <div id="brand">
+          <a href="./index.html">
+        <h1> HEALTHCONNECT </h1>
+        </a>
 
-  <div id="logo">
-  <h1> BMI Calculator </h1>
-  </div>
-  
+        <img class="logo" src="logo.svg">
+      </div>
+      <navbar role="navigation" aria-label="main menu">
+        <ul iclass="navbar">
+          <ul>
+            <li class="Calendar">
+              <a href="./calendar.html">Calendar</a>
+            </li>
+            <li class="BMICalc">
+              <a href="./BMICalc.html">BMI Calculator</a>
+            </li>
+            <li class="Search">
+              <a href="./search.html">Search</a>
+            </li>
+            <li class="Help">
+              <a href="./help.html">Help</a>
+            </li>
+            <li class="Authentication">
+              <a href="./Authentication.html">Sign Up/Login</a>
+            </li>
+          </ul>
+      </navbar>
+    </div>
+  </header>
+
+   
   <div id="content">
+  
+	<h1> BMI Calculator </h1>
+  
 	<input type="submit" name="" value="Male"><input type="submit" name="" value="Female">
 	<br>
 	<br>
