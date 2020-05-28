@@ -2,7 +2,7 @@ body{
     font: 15px/1.5 Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
-    background-color: 		#A9A9A9;
+    background-color:#A9A9A9;
 
 }
 
@@ -20,7 +20,7 @@ header ul{
 }
 
 header{
-  background: #000000;
+  background: #4fadaf;
   color: #ffffff;
   padding-top: 30px;
   min-height: 70px;
