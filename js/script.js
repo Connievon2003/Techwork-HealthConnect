@@ -12,7 +12,7 @@ window.onload = function(){
     var calendar = get_calendar(day_no, days);
     document.getElementById("calendar-month-year").innerHTML = month_name[month]+" "+year;
     document.getElementById("calendar-dates").appendChild(calendar);
-    
+
 }
 function get_calendar(day_no, days){
   var table = document.createElement('table');
@@ -28,7 +28,7 @@ function get_calendar(day_no, days){
 
   //create second row
   tr = document.createElement('tr');
-  var = c;
+  var c;
   for(c=0; c<=6; c++){
     if(c == day_no){
       break;
@@ -40,7 +40,7 @@ function get_calendar(day_no, days){
 
   var count = 1;
   for ( ; c<=6; c++ ){
-    vor td = document.createElement('td');
+    var td = document.createElement('td');
     td.innerHTML = count;
     count++;
     tr.appendChild(td);
@@ -62,4 +62,5 @@ function get_calendar(day_no, days){
     }
     table.appendChild(tr);
   }
+  return table;
 }
