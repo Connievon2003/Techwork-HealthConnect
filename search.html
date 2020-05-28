@@ -4,7 +4,7 @@
 <head>
 
   <title>Search</title>
- <link rel="stylesheet" href="style.css"
+ <link rel="stylesheet" href="style.css">
 
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
@@ -13,7 +13,6 @@
     #map {
       height: 100%;
     }
-
 
     html,
     body {
@@ -41,7 +40,7 @@
       display: flex;
       position: absolute;
       left: 25%;
-      top: 10%;
+    margin-top: 40px;
       width: 50%;
       z-index: 1;
     }
@@ -50,16 +49,16 @@
       top: 100px;
       left: 5%;
       width: 90%;
-      height: 350px;
+      height: 550px;
     }
 
     #listing {
       position: absolute;
       width: 25%;
-      height: 350px;
+      height: 550px;
 
       left: 5%;
-      top: 200px;
+      top: 210px;
       cursor: pointer;
       overflow-x: hidden;
     }
@@ -102,6 +101,8 @@
 
     #resultsTable {
       border-collapse: collapse;
+      width: 500px;
+
 
     }
 
@@ -126,47 +127,37 @@
 </head>
 
 <body>
+  <header>
+    <div class="container">
+      <div id="brand">
+          <a href="./index.html">
+        <h1> HEALTHCONNECT </h1>
+        </a>
 
-  <navbar role="navigation" aria-label="main menu">
-       <ul iclass="navbar">
-         <div>
-             <ul>
-               <li class="Home">
-                  <a href="./index.html">Home</a>
-               </li>
-               <li class="Calendar">
-                 <a href="./calendar.html">Calendar</a>
-               </li>
-               <li class="BMICalc">
-                 <a href="./BMICalc.html">BMI Calculator</a>
-               </li>
-               <li class="Search">
-                 <a href="./search.html">Search</a>
-               </li>
-               <li class="Help">
-                 <a href="./help.html">Help</a>
-                </li>
-                <li class="Authentication">
-                  <a href="./Authentication.html">Sign Up/Login</a>
-                 </li>
-             </ul>
-         </div>
-  </navbar>
-
-  <a href="#" class="brand-logo">
-    <div id="Union_3">
-      <h1> HEALTHCONNECT <h/1>
-        <img src="logo.svg" style="width: 70px; margin-top: 20px; margin-left: 50px;">
+        <img class="logo" src="logo.svg">
       </div>
- </a>
-
-
-  <a href="#" class="brand-logo">
-    <div id="Union_3">
-      <h1> FIND A CLINIC <h/1>
-        <img src="logo.svg" style="width: 70px; margin-top: 20px; margin-left: 50px;">
-      </div>
- </a>
+      <navbar role="navigation" aria-label="main menu">
+        <ul iclass="navbar">
+          <ul>
+            <li class="Calendar">
+              <a href="./calendar.html">Calendar</a>
+            </li>
+            <li class="BMICalc">
+              <a href="./BMICalc.html">BMI Calculator</a>
+            </li>
+            <li class="Search">
+              <a href="./search.html">Search</a>
+            </li>
+            <li class="Help">
+              <a href="./help.html">Help</a>
+            </li>
+            <li class="Authentication">
+              <a href="./Authentication.html">Sign Up/Login</a>
+            </li>
+          </ul>
+      </navbar>
+    </div>
+  </header>
 
   <div class="doctor-search">
 
@@ -230,7 +221,7 @@
           lat: -27.3,
           lng: 133.8
         },
-        zoom: 3.5
+        zoom: 4.1
       },
 
     };
