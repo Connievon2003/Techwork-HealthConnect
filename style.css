@@ -3,6 +3,7 @@ body{
     padding: 0;
     margin: 0;
     background-color: 		#A9A9A9;
+
 }
 
 .container{
@@ -46,8 +47,8 @@ header #brand{
 .logo{
   width: 30px;
   position: relative;
-  left: 280px;
-  bottom: 38px;
+  left: 300px;
+  bottom: 39px;
 }
 
 header #brand h1{
@@ -59,3 +60,26 @@ header navbar {
   margin-top: 10px;
 }
 
+#feature{
+  margin-top: 250px;
+  color: #000000;
+
+}
+
+#feature .box{
+  float: left;
+  text-align: center;
+  width: 30%;
+  padding: 10px;
+  font-size: 30px;
+
+}
+
+#feature .box img{
+  height: 150px;
+}
+
+a{
+  text-decoration: none;
+  color: #000000;
+}
