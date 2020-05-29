@@ -1,49 +1,46 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
   <head>
     <title>HealthConnect</title>
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
  <!-- Compiled and minified CSS -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- omitted...
-      <script src="https://apis.google.com/js/api.js" type="text/javascript"></script> -->
-
   </head>
 
 <body class="grey lighten-3"">
 
-  <navbar role="navigation" aria-label="main menu">
-       <ul iclass="navbar">
-         <div>
-             <ul>
-               <li class="Home">
-                  <a href="./index.html">Home</a>
-               </li>
-               <li class="Calendar">
-                 <a href="./calendar.html">Calendar</a>
-               </li>
-               <li class="BMICalc">
-                 <a href="./BMICalc.html">BMI Calculator</a>
-               </li>
-               <li class="Search">
-                 <a href="./search.html">Search</a>
-               </li>
-               <li class="Help">
-                 <a href="./help.html">Help</a>
-                </li>
-             </ul>
-         </div>
-  </navbar>
+  <header>
+    <div class="container">
+      <div id="brand">
+          <a href="./index.html">
+        <h1 style="font-size: 33px; text-align: left;"> HEALTHCONNECT </h1>
+        </a>
 
-  <a href="#" class="brand-logo">
-    <div id="Union_3">
-      <h1> HEALTHCONNECT <h/1>
-        <img src="logo.svg" style="width: 70px; margin-top: 20px; margin-left: 50px;">
+        <img class="logo" src="logo.svg">
       </div>
- </a>
+      <navbar role="navigation" aria-label="main menu">
+        <ul iclass="navbar">
+          <ul>
+            <li class="Calendar">
+              <a href="./calendar.html">Calendar</a>
+            </li>
+            <li class="BMICalc">
+              <a href="./BMICalc.html">BMI Calculator</a>
+            </li>
+            <li class="Search">
+              <a href="./search.html">Search</a>
+            </li>
+            <li class="Help">
+              <a href="./help.html">Help</a>
+            </li>
+          </ul>
+      </navbar>
+    </div>
+  </header>
 
       <!-- NAVBAR -->
       <nav class="z-depth-0 grey lighten-4">
@@ -57,7 +54,7 @@
                <a href="#" class="grey-text" id="logout">Logout</a>
              </li>
              <li class="logged-in">
-               <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
+               <a href="#" class="grey-text modal-trigger" data-target="modal-create">Book Appointments</a>
              </li>
              <li class="logged-out">
                <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
@@ -75,6 +72,10 @@
          <h4>Sign up</h4><br />
          <form id="signup-form">
            <div class="input-field">
+             <input type="text" id="signup-bio" required />
+             <label for="signup-bio">Full Name</label>
+           </div>
+           <div class="input-field">
              <input type="email" id="signup-email" required />
              <label for="signup-email">Email address</label>
            </div>
@@ -82,7 +83,15 @@
              <input type="password" id="signup-password" required />
              <label for="signup-password">Choose password</label>
            </div>
-           <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+           <div class="input-field">
+             <input type="text" id="signup-age" required />
+             <label for="age">Your age</label>
+           </div>
+           <div class="input-field">
+             <input type="text" id="signup-gender" required />
+             <label for="gender">Your gender</label>
+           </div>
+           <button class="btn green darken-2 z-depth-0">Sign up</button>
          </form>
        </div>
      </div>
@@ -100,7 +109,7 @@
              <input type="password" id="login-password" required />
              <label for="login-password">Your password</label>
            </div>
-           <button class="btn yellow darken-2 z-depth-0">Login</button>
+           <button class="btn green darken-2 z-depth-0">Login</button>
          </form>
        </div>
      </div>
@@ -117,17 +126,21 @@
      <!-- CREATE GUIDE MODAL -->
      <div id="modal-create" class="modal">
        <div class="modal-content">
-         <h4>Create Guide</h4><br />
+         <h4>Create Appointment</h4><br />
          <form id="create-form">
            <div class="input-field">
              <input type="text" id="title" required>
-             <label for="title">Guide Title</label>
+             <label for="title">Doctor</label>
            </div>
            <div class="input-field">
              <textarea id="content" class="materialize-textarea" required></textarea>
-             <label for="content">Guide Content</label>
+             <label for="content">Date</label>
            </div>
-           <button class="btn yellow darken-2 z-depth-0">Create</button>
+           <div class="input-field">
+             <textarea id="content" class="materialize-textarea" required></textarea>
+             <label for="content">Time</label>
+           </div>
+           <button class="btn green darken-2 z-depth-0">Create</button>
          </form>
        </div>
      </div>

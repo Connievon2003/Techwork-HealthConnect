@@ -1,15 +1,32 @@
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
-    console.log('user logged in: ', user);
-    db.collection('guides').get().then(snapshot => {
+    db.collection('guides').onSnapshot(snapshot => {
       setupGuides(snapshot.docs);
-    });
+      setupUI(user);
+    }, err => console.log(err.message));
   } else {
-    console.log('user logged out');
+    setupUI();
     setupGuides([]);
   }
-})
+});
+
+// create new guide
+const createForm = document.querySelector('#create-form');
+createForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  db.collection('guides').add({
+    title: createForm.title.value,
+    content: createForm.content.value
+  }).then(() => {
+    // close the create modal & reset form
+    const modal = document.querySelector('#modal-create');
+    M.Modal.getInstance(modal).close();
+    createForm.reset();
+  }).catch(err => {
+    console.log(err.message);
+  });
+});
 
 // signup
 const signupForm = document.querySelector('#signup-form');
@@ -20,8 +37,18 @@ signupForm.addEventListener('submit', (e) => {
   const email = signupForm['signup-email'].value;
   const password = signupForm['signup-password'].value;
 
-  // sign up the user
+  // sign up the user & add firestore data
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
+    return db.collection('users').doc(cred.user.uid).set({
+      bio: signupForm['signup-bio'].value
+    });
+    return db.collection('users').doc(cred.user.uid).set({
+      age: signupForm['signup-age'].value
+    });
+    return db.collection('users').doc(cred.user.uid).set({
+      gender: signupForm['signup-gender'].value
+    });
+  }).then(() => {
     // close the signup modal & reset form
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();
