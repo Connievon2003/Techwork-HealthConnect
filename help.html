@@ -3,40 +3,57 @@
 
 <head>
   <title>Help</title>
-  <link rel="stylesheet" href="style.css"
+  <link rel="stylesheet" href="style.css">
+  <style media="screen">
+    section{
+      padding-left: 5%;
+      padding-top: 50px;
+      font-size: 16px;
+    }
+  </style>
+
+
 </head>
 
-<header>
-  <div class="container">
-    <div id="brand">
-        <a href="./index.html">
-      <h1> HEALTHCONNECT </h1>
-      </a>
+<body>
+  <header>
+    <div class="container">
+      <div id="brand">
+          <a href="./index.html">
+        <h1> HEALTHCONNECT </h1>
+        </a>
 
-      <img class="logo" src="logo.svg">
+        <img class="logo" src="logo.svg">
+      </div>
+      <navbar role="navigation" aria-label="main menu">
+        <ul iclass="navbar">
+          <ul>
+            <li class="Calendar">
+              <a href="./calendar.html">Calendar</a>
+            </li>
+            <li class="BMICalc">
+              <a href="./BMICalc.html">BMI Calculator</a>
+            </li>
+            <li class="Search">
+              <a href="./search.html">Search</a>
+            </li>
+            <li class="Help">
+              <a href="./help.html">Help</a>
+            </li>
+            <li class="Authentication">
+              <a href="./Authentication.html">Sign Up/Login</a>
+            </li>
+          </ul>
+      </navbar>
     </div>
-    <navbar role="navigation" aria-label="main menu">
-      <ul iclass="navbar">
-        <ul>
-          <li class="Calendar">
-            <a href="./calendar.html">Calendar</a>
-          </li>
-          <li class="BMICalc">
-            <a href="./BMICalc.html">BMI Calculator</a>
-          </li>
-          <li class="Search">
-            <a href="./search.html">Search</a>
-          </li>
-          <li class="Help">
-            <a href="./help.html">Help</a>
-          </li>
-          <li class="Authentication">
-            <a href="./Authentication.html">Sign Up/Login</a>
-          </li>
-        </ul>
-    </navbar>
-  </div>
-</header>
+  </header>
+
+  <section>
+    <h3>Contact Us</h3>
+    <p><b>Phone:</b> 0412345678</p>
+    <p><b>Email:</b> support@healthconnect.com.au</p>
+    <p><b>Time:</b> Mon-Fri 8am-5pm</p>
+  </section>
 
 </body>
 
